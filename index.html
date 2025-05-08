@@ -10,48 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body class="nunito-sans-font">
-  <header >
+  <header>
     <h1>Mehmet Pala</h1>
     <nav>
       <a href="#about">Hakkımda</a>
       <a href="#projects">Projeler</a>
       <a href="#contact">İletişim</a>
+      <a href="https://github.com/CosmicMass" target="_blank" id="github-link">GitHub</a>
     </nav>
-    <button id="dark-toggle" aria-label="Işığı kapat">
-      🌙 
-    </button>
+    <button id="dark-toggle" aria-label="Işığı kapat">🌙</button>
   </header>
 
   <section id="about">
     <img src="assets/profil.jpg" alt="Profil Fotoğrafı">
     <h2>Merhaba!</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien dui, laoreet at aliquet in, feugiat gravida metus. Integer eu nunc luctus, malesuada ex id, efficitur leo. Vestibulum vel turpis nunc. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien dui, laoreet at aliquet in, feugiat gravida metus. Integer eu nunc luctus, malesuada ex id, efficitur leo. Vestibulum vel turpis nunc.</p>
   </section>
 
   <section id="projects">
     <h2>Projelerim</h2>
-    <div class="project-list">
-  
-      <!-- 1. Proje Kartı -->
-      <div class="project-card">
-        <h3>Jumpi's Questions Trivia</h3>
-        <p>Lorem ipsum.</p>
-        <!-- Linkler -->
-        <div class="project-links">
-          <a href="https://apps.apple.com/tr/app/jumpis-questions-kids-trivia/id6463607047" target="_blank">App Store</a>
-        </div>
-      </div>
-  
-      <!-- Kidz Jungle Projesi -->
-      <div class="project-card">
-        <h3>Kidz Jungle</h3>
-        <p>Lorem ipsum.</p>
-        <div class="project-links">
-          <a href="https://apps.apple.com/tr/app/kidzjungle-educational-videos/id1541521199" target="_blank">App Store</a>
-        </div>
-      </div>
-    </div>
-  </section>  
+    <!-- JS will populate this container -->
+    <div id="project-list" class="project-list"></div>
+  </section>
 
   <section id="contact">
     <h2>İletişim</h2>
