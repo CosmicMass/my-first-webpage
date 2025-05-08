@@ -1,0 +1,217 @@
+:root {
+  --primary-color: #1e90ff;      /* Birincil renk */
+  --secondary-color: #f9f9f9;    /* İkincil arka plan */
+  --text-color: #333333;         /* Metin rengi */
+  --accent-color: #ff5722;       /* Vurgu rengi */
+  --amber: #ffbe0b;              /* Ek vurgu rengi */
+  --background-card: #ffffff;    /* Kart ve section arka planı */
+  --gradient-right: linear-gradient(90deg, var(--amber), var(--accent-color));
+
+  /* New HEX Variables */
+  --amber: #ffbe0bff;
+  --orange-pantone: #fb5607ff;
+  --rose: #ff006eff;
+  --blue-violet: #8338ecff;
+  --azure: #3a86ffff;
+
+  /* New HSL Variables */
+  --amber-hsl: hsla(44, 100%, 52%, 1);
+  --orange-pantone-hsl: hsla(19, 97%, 51%, 1);
+  --rose-hsl: hsla(334, 100%, 50%, 1);
+  --blue-violet-hsl: hsla(265, 83%, 57%, 1);
+  --azure-hsl: hsla(217, 100%, 61%, 1);
+
+  /* Gradient Variables */
+  --gradient-top: linear-gradient(0deg, var(--amber), var(--orange-pantone), var(--rose), var(--blue-violet), var(--azure));
+  --gradient-right: linear-gradient(90deg, var(--amber), var(--orange-pantone), var(--rose), var(--blue-violet), var(--azure));
+  --gradient-bottom: linear-gradient(180deg, var(--amber), var(--orange-pantone), var(--rose), var(--blue-violet), var(--azure));
+  --gradient-left: linear-gradient(270deg, var(--amber), var(--orange-pantone), var(--rose), var(--blue-violet), var(--azure));
+}
+
+body.dark {
+  --secondary-color: #121417;
+  --background-card: #1e1e1f;
+  --text-color: #e0e0e0;
+}
+
+/*==================
+  Genel Sıfırlama ve Temel Ayarlar
+===================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.6;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/*========= DARK MODE TOGGLE BUTTON =========*/
+#dark-toggle {
+  background: transparent;      
+  border: none;
+  font-size: 1.2rem;            
+  color: inherit;               
+  cursor: pointer;
+  padding: 8px;                 
+  border-radius: 4px;           
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover’da hafif hacim ve arka plan vurgusu */
+#dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/*==================
+  Header ve Navigasyon
+===================*/
+header {
+  background: var(--gradient-right);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: var(--amber);
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/*==================
+  Bölümler Ortak Stil
+===================*/
+section {
+  background-color: var(--background-card);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/*==================
+  Profil Fotoğrafı
+===================*/
+img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/*==================
+  Projeler Bölümü
+===================*/
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+.project-card {
+  background-color: var(--background-card);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/*==================
+  Proje Linkleri (Buton Görünümü)
+===================*/
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.project-links a {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.project-links a:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/*==================
+  İletişim Formu (Dikey ve Orantılı)
+===================*/
+/* Form’u ID üzerinden seçiyoruz */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;          /* Alanlar arasındaki boşluk */
+  padding: 20px;
+  background-color: var(--background-card);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Tüm input ve textarea blok seklinde, eşit genişlik */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: block;
+}
+
+#contact-form textarea {
+  min-height: 120px;
+  resize: vertical;   /* Yalnızca dikey yeniden boyutlandırmaya izin verir */
+}
+
+/* Gönder butonu */
+#contact-form button {
+  width: auto;        /* İçeriğe göre genişlesin */
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Buton hover efekti */
+#contact-form button:hover {
+  background-color: #e64a19;
+  transform: scale(1.02);
+}
+/*==================
+  Footer
+===================*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--gradient-right);
+  margin-top: 40px;
+}
